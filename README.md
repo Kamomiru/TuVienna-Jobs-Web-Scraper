@@ -1,88 +1,123 @@
-TuWienJobsWebScraper
+# TuWienJobsWebScraper
 
-A simple Python scraper for job postings from the TU Wien website.
+A simple **Python scraper** for job postings from the TU Wien website.
 It allows filtering jobs by keywords, highlighting preferred institutes, and optionally running automatically on Windows startup.
 
-⚠️ Disclaimer
-This project is for educational purposes only.
-Make sure you respect the Terms of Service of the website you scrape.
-The author is not responsible for misuse.
+---
 
-Features
-Scrapes job postings from the TU Wien jobs website
-Filter jobs using exclusion keywords
-Highlight jobs from preferred institutes
-Previously seen jobs are shown in grey
-Optional Windows autostart notification setup
+## ⚠️ Disclaimer
+
+This project is for **educational purposes only**.
+Make sure you respect the **Terms of Service** of the website you scrape.
+The author is **not responsible for misuse**.
+
+---
+
+## Features
+
+* Scrapes job postings from the TU Wien jobs website
+* Filter jobs using exclusion keywords
+* Highlight jobs from preferred institutes
+* Previously seen jobs are shown in grey
+* Optional Windows autostart setup
+
+---
+
+## Configuration
 
 You can configure filters in:
 
+```
 WebScraperModule.py
+```
 
-EXCLUSION_KEYWORDS
+### EXCLUSION_KEYWORDS
 
 Jobs containing any of these keywords will not be shown.
 
-INSTITUTES
+### INSTITUTES
 
 If a job description contains one of these names, it will be highlighted.
 
 Example:
 
+```python
 EXCLUSION_KEYWORDS = ["Doc", "Prof"]
 
 INSTITUTES = [
-"Institut für Energietechnik und Thermodynamik",
-"Institut für Mechanik und Mechatronik"
+    "Institut für Energietechnik und Thermodynamik",
+    "Institut für Mechanik und Mechatronik"
 ]
+```
 
-Installation
+---
+
+## Installation
+
 Install Python (3.10+ recommended)
-Clone the repository
 
+Clone the repository:
+
+```
 git clone https://github.com/Kamomiru/TuVienna-Jobs-Web-Scraper.git
+```
 
-Go into the project folder
+Go into the project folder:
 
+```
 cd TuWienJobsWebScraper
+```
 
-Run the scraper
+Run the scraper:
 
+```
 python TuWienJobsWebScraper.py
+```
 
-Run automatically on Windows startup
+---
+
+## Run automatically on Windows startup
 
 You can configure the scraper to run when Windows starts.
 
-1. Customize Batch File
+### 1. Customize Batch File
 
+Create or edit `autostart.bat`:
+
+```
 @echo off
-REM Insert path where you have python installed below
+
+REM Insert path where Python is installed
 cd "C:\PYTHON PATH"
-REM Insert path where you saved TuWienJobsWebScraper.py
+
+REM Insert path where TuWienJobsWebScraper.py is saved
 python "C:\SCRAPER PATH\TuWienJobsWebScraper.py"
+```
 
-2. Open startup folder
+### 2. Open startup folder
 
-Press Win + R and enter:
+Press **Win + R** and enter:
 
+```
 shell:startup
+```
 
-3. Copy the batch file
+### 3. Copy the batch file
 
-Copy autostart.bat into the startup folder.
+Copy `autostart.bat` into the startup folder.
 
-4. Enable in Task Manager
+### 4. Enable in Task Manager
 
-Open Task Manager → Startup
+Open **Task Manager → Startup**
+
 Enable the batch file if it is disabled.
 
 Now the scraper will run every time you start your PC.
 
-Notes
-Only scrape publicly available data
-Do not overload the website with requests
-Use responsibly
+---
 
+## Notes
 
-
+* Only scrape publicly available data
+* Do not overload the website with requests
+* Use responsibly
